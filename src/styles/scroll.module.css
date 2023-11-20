@@ -1,0 +1,54 @@
+.holster {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column nowrap;
+    font-family: monospace;
+  }
+  .container {
+    display: flex;
+    margin: 1em auto;
+    /* outline: 1px dashed lightgray; */
+    flex: none;
+    overflow: auto;
+    scrollbar-width: 0px ;
+  }
+  .container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+  .container.y {
+    width: 100%;
+    height: 45vh;
+    flex-flow: column nowrap;
+    overflow-x: hidden;
+  }
+  
+  /* scroll-snap */
+ 
+  .y.mandatory_scroll_snapping {
+    scroll-snap-type: y mandatory;
+  }
+  
+  .always_stop> div{
+    scroll-snap-stop: always;
+  }
+  .container > div {
+    text-align: center;
+    scroll-snap-align: center;
+    flex: none;
+  }
+  
+
+  .y.container > div {
+    line-height: 256px;
+    font-size: 128px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* appearance fixes */
+  .y.container > div:first-child {
+    line-height: 1.3;
+    font-size: 64px;
+  }
+  
